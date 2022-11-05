@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ROWSET>
+ <ROW>
+  <C_ID>CA001</C_ID>
+  <C_NAME>FURNITURES</C_NAME>
+ </ROW>
+ <ROW>
+  <C_ID>CA002</C_ID>
+  <C_NAME>CLOTHING</C_NAME>
+ </ROW>
+ <ROW>
+  <C_ID>CA003</C_ID>
+  <C_NAME>SPORTS</C_NAME>
+ </ROW>
+ <ROW>
+  <C_ID>CA004</C_ID>
+  <C_NAME>ELECTRONICS</C_NAME>
+ </ROW>
+ <ROW>
+  <C_ID>CA005</C_ID>
+  <C_NAME>KITCHEN</C_NAME>
+ </ROW>
+</ROWSET>
