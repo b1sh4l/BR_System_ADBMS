@@ -3,8 +3,8 @@
 
 function connection()
 {
-    $username="shreeman";
-    $password="Cu6E@3JUr82CEKE";
+    $username="scott";
+    $password="tiger";
     $dbname= "localhost/XE";
 	$conn = oci_connect($username, $password, $dbname);
 	if(!$conn){
