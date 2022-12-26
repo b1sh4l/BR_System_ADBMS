@@ -1,0 +1,18 @@
+<?php
+
+$username="shreeman";
+$password="Cu6E@3JUr82CEKE";
+$dbname= "localhost/XE";
+
+$conn = oci_connect($username,$password,$dbname);
+
+
+	if(!$conn){
+		echo "ERROR";
+	}
+
+	else{
+		echo "ok";
+	}
+	
+?>

@@ -1,0 +1,39 @@
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+    margin-top: 10px;
+}
+.heading-table{
+    text-align: center;
+    background-color: gray;
+    position: sticky;
+}
+.heading-table p{
+    
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+table{
+    
+    width: 50%;
+    margin-bottom: 10px;
+    
+}
+th{
+    background-color: rgb(75, 77, 73);
+    color: white;
+    
+}
+td{
+    text-align: center;
+}
+ table tr:hover{
+    background-color: #b648b0a4;
+}
+
+.form {
+    border: 2px solid red;
+}
