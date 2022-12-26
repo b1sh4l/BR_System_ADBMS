@@ -4,41 +4,169 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/Searching.css">
-    <title>Searching</title>
+    <link rel="stylesheet" href="../CSS/Table.css">
+    <title>Table View</title>
 </head>
 <body>
 <?php
 
 include '../View/Header.php';
-include '../Model/SearchingModel.php';
+include '../Model/TableModel.php';
 ?>
 <div class="title">
-    <h1>Searching Operation from oracle</h1>
+    <h1>Table View From Oracle</h1>
 </div>
 <div class="heading-table">
-    <p>Find all employees with their location and job details.</p>
+    <h1>01. ADMIN:</h1>
 </div>
 <table border="2">
     <tr>
-    <th>Employee Id</th>
+    <th>Admin ID</th>
+    <th>Admin Password</th>
     <th>First Name</th>
     <th>Last Name</th>
+    <th>Joinning Date</th>
+    <th>Age</th>
     <th>Gender</th>
+    <th>Mobile No</th>
     <th>Email</th>
-    <th>Password</th>
-    <th>Phone Number</th>
-    <th>Hiredate</th>
-    <th>Job Id</th>
-    <th>Location Id</th>
-    <th>Job Title</th>
-    <th>Salary</th>
-    <th>City</th>
-    <th>Street</th>
+    </tr>
+    <?php
+    $res = AdminShow(); //res = sql
+    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        
+        echo '<tr>';
+        foreach ($row as $item) 
+        {
+            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        echo '</tr>';
+        }
+    ?>
+</table>
+
+<div class="heading-table">
+    <h1>02. Customer Support:</h1>
+</div>
+<table border="2">
+    <tr>
+    <th>Customer Support ID</th>
+    <th>Customer Support Password</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Joinning Date</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile No</th>
+    <th>Email</th>
+    </tr>
+    <?php
+    $res = CUSTOMER_SUPPORTShow();
+    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        
+        echo '<tr>';
+        foreach ($row as $item) 
+        {
+            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        echo '</tr>';
+        }
+    ?>
+</table>
+
+
+
+<div class="heading-table">
+    <h1>03. Borrower:</h1>
+</div>
+<table border="2">
+    <tr>
+    <th>Borrower ID</th>
+    <th>Borrower Password</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Joinning Date</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile No</th>
+    <th>Email</th>
+    </tr>
+    <?php
+    $res = BorrowerShow();
+    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        
+        echo '<tr>';
+        foreach ($row as $item) 
+        {
+            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        echo '</tr>';
+        }
+    ?>
+</table>
+
+<div class="heading-table">
+    <h1>04. Owner:</h1>
+</div>
+<table border="2">
+    <tr>
+    <th>Owner ID</th>
+    <th>Owner Password</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Joinning Date</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile No</th>
+    <th>Email</th>
+    </tr>
+    <?php
+    $res = OwnerShow();
+    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        
+        echo '<tr>';
+        foreach ($row as $item) 
+        {
+            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        echo '</tr>';
+        }
+    ?>
+</table>
+
+<div class="heading-table">
+    <h1>05. Category:</h1>
+</div>
+<table border="2">
+    <tr>
+    <th>Category ID</th>
+    <th>Category Name</th>
+    </tr>
+    <?php
+    $res =CATEGORYShow();
+    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        
+        echo '<tr>';
+        foreach ($row as $item) 
+        {
+            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        echo '</tr>';
+        }
+    ?>
+</table>
+
+<div class="heading-table">
+    <h1>06. Customer:</h1>
+</div>
+<table border="2">
+    <tr>
+    <th>Customer ID</th>
+    <th>Borrower-Owner ID</th>
     
     </tr>
     <?php
-    $res = problem1();
+    $res = CustomerShow();
     while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
         
         echo '<tr>';
@@ -52,158 +180,16 @@ include '../Model/SearchingModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Find those employees and suppliers who live in same location.</p>
+    <h1>07. Payment Methods:</h1>
 </div>
 <table border="2">
     <tr>
-    <th>Employee Name</th>
-    <th>Supplier Name</th>
-    <th>City</th>
-    <th>Street</th>
-    </tr>
-    <?php
-    $res = problem2();
-    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
-        
-        echo '<tr>';
-        foreach ($row as $item) 
-        {
-            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
-        }
-        echo '</tr>';
-        }
-    ?>
-</table>
-
-<div class="heading-table">
-    <p>Find those products information and catagory information which sold the most.</p>
-</div>
-<table border="2">
-    <tr>
-    <th>Product Id</th>
-    <th>Product Name</th>
-    <th>Quantity</th>
-    <th>Cost Price</th>
-    <th>Sell Price</th>
-    <th>Catagory Id</th>
-    <th>Catagory Name</th>
-    </tr>
-    <?php
-    $res = problem3();
-    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
-        
-        echo '<tr>';
-        foreach ($row as $item) 
-        {
-            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
-        }
-        echo '</tr>';
-        }
-    ?>
-</table>
-
-<div class="heading-table">
-    <p>Find out the second highest price's product details.</p>
-</div>
-<table border="2">
-    <tr>
-    <th>Product Id</th>
-    <th>Product Name</th>
-    <th>Quantity</th>
-    <th>Cost Price</th>
-    <th>Sell Price</th>
-    <th>Catagory Id</th>
-
-    </tr>
-    <?php
-    $res = problem4();
-    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
-        
-        echo '<tr>';
-        foreach ($row as $item) 
-        {
-            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
-        }
-        echo '</tr>';
-        }
-    ?>
-</table>
-
-<div class="heading-table">
-    <p>Find the employees who purchase products most.</p>
-</div>
-<table border="2">
-    <tr>
-    <th>Employee Id</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Gender</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Phone Number</th>
-    <th>Hiredate</th>
-    <th>Job Id</th>
-    <th>Location Id</th>
-
-    </tr>
-    <?php
-    $res = problem5();
-    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
-        
-        echo '<tr>';
-        foreach ($row as $item) 
-        {
-            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
-        }
-        echo '</tr>';
-        }
-    ?>
-</table>
-
-<div class="heading-table">
-    <p>Find those employees whose city same as Farid and Salary same as Mohib.</p>
-</div>
-<table border="2">
-    <tr>
-    <th>Employee Id</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Gender</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Phone Number</th>
-    <th>Hiredate</th>
-    <th>Job Id</th>
-    <th>Location Id</th>
-    <th>Job Title</th>
-    <th>Salary</th>
-    <th>City</th>
-    <th>Street</th>
-    </tr>
-    <?php
-    $res = problem6();
-    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
-        
-        echo '<tr>';
-        foreach ($row as $item) 
-        {
-            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
-        }
-        echo '</tr>';
-        }
-    ?>
-</table>
-
-<div class="heading-table">
-    <p>Find most junior employee's salary</p>
-</div>
-<table border="2">
-    <tr>
+    <th>Payment Method ID</th>
+    <th>Payment Method Name</th>
     
-    <th>Salary</th>
     </tr>
     <?php
-    $res = problem7();
+    $res = pMethodShow();
     while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
         
         echo '<tr>';
@@ -216,21 +202,18 @@ include '../Model/SearchingModel.php';
     ?>
 </table>
 
+
 <div class="heading-table">
-    <p>Find those products with catagory which have less cost price than Bread.</p>
+    <h1>08. Employees:</h1>
 </div>
 <table border="2">
     <tr>
-    <th>Product Id</th>
-    <th>Product Name</th>
-    <th>Quantity</th>
-    <th>Cost Price</th>
-    <th>Sell Price</th>
-    <th>Catagory Id</th>
-    <th>Catagory Name</th>
+    <th>Employee ID</th>
+    <th>Admin-CustomerSupport ID</th>
+    <th>Job</th>
     </tr>
     <?php
-    $res = problem8();
+    $res = EmployeeShow();
     while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
         
         echo '<tr>';
@@ -243,24 +226,21 @@ include '../Model/SearchingModel.php';
     ?>
 </table>
 
+
 <div class="heading-table">
-    <p>Find those maximum employees who join the same time.</p>
+    <h1>09. Complaints:</h1>
 </div>
 <table border="2">
     <tr>
-    <th>Employee Id</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Gender</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Phone Number</th>
-    <th>Hiredate</th>
-    <th>Job Id</th>
-    <th>Location Id</th>
+    <th>Complaint ID</th>
+    <th>Customer ID</th>
+    <th>Mobile No</th>
+    <th>E-mail</th>
+    <th>Complaints Details</th>
+    <th>Date</th>
     </tr>
     <?php
-    $res = problem9();
+    $res = ComplaintsShow();
     while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
         
         echo '<tr>';
@@ -273,20 +253,21 @@ include '../Model/SearchingModel.php';
     ?>
 </table>
 
+
 <div class="heading-table">
-    <p>Find the product which has maximum profit.</p>
+    <h1>10. Requested Products:</h1>
 </div>
 <table border="2">
     <tr>
-    <th>Product Id</th>
-    <th>Product Name</th>
-    <th>Quantity</th>
-    <th>Cost Price</th>
-    <th>Sell Price</th>
-    <th>Catagory Id</th>
+    <th>Requested Product ID</th>
+    <th>Borrower ID</th>
+    <th>Requested Product Name</th>
+    <th>Customer ID</th>
+    <th>Budget</th>
+    <th>Date</th>
     </tr>
     <?php
-    $res = problem10();
+    $res = RequestedProductsShow();
     while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
         
         echo '<tr>';
@@ -298,5 +279,59 @@ include '../Model/SearchingModel.php';
         }
     ?>
 </table>
+
+
+<div class="heading-table">
+    <h1>11. Rented Products:</h1>
+</div>
+<table border="2">
+    <tr>
+    <th>Rented Product ID</th>
+    <th>Owner ID</th>
+    <th>REnted Product Name</th>
+    <th>Customer ID</th>
+    <th>Rent</th>
+    <th>Date</th>
+    </tr>
+    <?php
+    $res = RentedProductsShow();
+    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        
+        echo '<tr>';
+        foreach ($row as $item) 
+        {
+            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        echo '</tr>';
+        }
+    ?>
+</table>
+
+
+<div class="heading-table">
+    <h1>12. Payment Details:</h1>
+</div>
+<table border="2">
+    <tr>
+    <th>Payment ID</th>
+    <th>Customer ID</th>
+    <th>Payment Method ID</th>
+    <th>Amount</th>
+    <th>Date</th>
+    </tr>
+    <?php
+    $res = PaymentShow();
+    while ($row = oci_fetch_array($res, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        
+        echo '<tr>';
+        foreach ($row as $item) 
+        {
+            echo '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        echo '</tr>';
+        }
+    ?>
+</table>
+
 </body>
 </html>

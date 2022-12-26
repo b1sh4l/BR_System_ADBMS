@@ -19,12 +19,13 @@ table{
     
 }
 th{
-    background-color: greenyellow;
+    background-color: rgb(75, 77, 73);
+    color: white;
     
 }
 td{
     text-align: center;
 }
  table tr:hover{
-    background-color: #02FE73;
+    background-color: #b648b0a4;
 }

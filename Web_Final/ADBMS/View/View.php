@@ -17,18 +17,14 @@ include '../Model/ViewModel.php';
     <h1>View</h1>
 </div>
 <div class="heading-table">
-    <p>Create a view sales_view for showing sales information with customer and product details. </p>
+    <p>Requested Products with the Category name </p>
 </div>
 <table border="2">
     <tr>
-    <th>Sales Id</th>
-    <th>Product Name</th>
-    <th>Quantity </th>
-    <th>Sale Price</th>
-    <th>Total Amount</th>
-    <th>Customer First Name</th>
-    <th>Last Name </th>
-    <th>Phone Number</th>
+    <th>Requested Product ID</th>
+    <th>Requested Product Name</th>
+    <th>Category </th>
+    <th>Budget</th>
     </tr>
     <?php
     $res = view1();
@@ -45,16 +41,18 @@ include '../Model/ViewModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Create a view product_discount based on product table to get 5% discount for all products.</p>
+    <p>Owner who rented products amount of more than 500:</p>
 </div>
 <table border="2">
     <tr>
-    <th>Product Id</th>
-    <th>Product Name</th>
-    <th>Quantity</th>
-    <th>Cost Price</th>
-    <th>Sell Price</th>
-    <th>Discount</th>
+    <th>Owner ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Mobile No</th>
+    <th>Amount</th>
+    <th>Date</th>
     </tr>
     <?php
     $res = view2();
@@ -71,13 +69,16 @@ include '../Model/ViewModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Create a view manager_new_salary based on job table to get 15% salary increase for manager. </p>
+    <p>Company taking 15% profit share breakdown:</p>
 </div>
 <table border="2">
     <tr>
-    <th>Job Id</th>
-    <th>Job Titile</th>
-    <th>Salary</th>
+    <th>Rented Product ID</th>
+    <th>Owner ID</th>
+    <th>Rented Product Name</th>
+    <th>Rent</th>
+    <th>Company Share</th>
+    <th>Owner Profit</th>
     </tr>
     <?php
     $res = view3();
@@ -95,13 +96,17 @@ include '../Model/ViewModel.php';
 
 
 <div class="heading-table">
-    <p>Create a view supplier_company for showing supplier companies location details. </p>
+    <p>Owner customers’ complaints: </p>
 </div>
 <table border="2">
     <tr>
-    <th>Company name</th>
-    <th>City</th>
-    <th>Sreet</th>
+    <th>Owner ID</th>
+    <th>Compaint ID</th>
+    <th>Customer ID</th>
+    <th>Mobile No</th>
+    <th>Email</th>
+    <th>Complaint Details</th>
+    <th>Posted Date</th>
     </tr>
     <?php
     $res = view4();

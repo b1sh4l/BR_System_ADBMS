@@ -27,7 +27,7 @@
         <li><a href="../View/View.php">View</a></li>
         <li><a href="../View/PlSql.php">Procedural Function</a></li>
         <li><a href="../View/Trigger.php">Trigger</a></li>
-        <li><a href="../Controller/Logout.php">Logout</a></li>
+        <li><a href="../Controller/SignOut.php">SignOut</a></li>
     </ul>
 </div>
 </body>
