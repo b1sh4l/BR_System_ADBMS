@@ -11,11 +11,8 @@
     
 <div class="header">
     <div class="logo">
-        <h1>Easy Store</h1>
+        <h1>B-R System</h1>
     </div>
-<div class="welcome-text">
-    <h1>Welcome </h1>
-</div>
 </div>
 
 <div class="menubar">
@@ -25,7 +22,7 @@
         <li><a href="../View/Table.php">Table</a></li>
         <li><a href="../View/Searching.php">Searching</a></li>
         <li><a href="../View/View.php">View</a></li>
-        <li><a href="../View/PlSql.php">Procedural Function</a></li>
+        <li><a href="../View/Procedure.php">Procedural Function</a></li>
         <li><a href="../View/Trigger.php">Trigger</a></li>
         <li><a href="../Controller/SignOut.php">SignOut</a></li>
     </ul>
