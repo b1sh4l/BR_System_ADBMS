@@ -49,7 +49,7 @@ include '../Model/SearchingModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Find the employee who joine after 2020</p>
+    <p>Find the employee who joined after 2020</p>
 </div>
 <table border="2" style="width:100%">
     <tr>

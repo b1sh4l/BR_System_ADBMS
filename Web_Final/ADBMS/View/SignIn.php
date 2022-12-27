@@ -8,6 +8,8 @@ include "../Controller/SignInCheck.php";
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../CSS/SignIn.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         table, th, td {
@@ -19,6 +21,7 @@ include "../Controller/SignInCheck.php";
 
 <body>
     <div>
+    <div class="box">
         <form action="#" method="post">
         <h2><center><b><u>ADMIN</u></b></center></h2>
     	<table align="center">
@@ -52,8 +55,8 @@ include "../Controller/SignInCheck.php";
               <tr>
                 <td></td>
                 <td >
-                    <input type="submit" value="Signin" name="btnsignin">
-                    <input type="reset" name="Reset">
+                    <input id='btn1' type="submit" value="Signin" name="btnsignin">
+                    <input id='btn2' type="reset" name="Reset">
                 </td>
               </tr>
 
@@ -68,7 +71,8 @@ include "../Controller/SignInCheck.php";
 
         </table>
         </form>
-    </div>
+    
+    
 
     <div>
         <form action="../View/SignUp.php" method="post">
@@ -76,12 +80,14 @@ include "../Controller/SignInCheck.php";
                 <tr>
                 <td></td>
                 <td colspan="3">
-                    <input type="submit" value="SignUp" name="btnsignup">
+                    <input id='btn3' type="submit" value="SignUp" name="btnsignup">
                 </td>
               </tr>
             </table>
         </form>
     </div>
+    </div>
+    
 </body>
 </html>
 

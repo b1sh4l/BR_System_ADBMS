@@ -17,12 +17,11 @@
 
 <div class="menubar">
     <ul>
-        <li><a href="../View/Dashboard.php">Home</a></li>
-        <li><a href="../View/Sequence.php">Sequence</a></li>
         <li><a href="../View/Table.php">Table</a></li>
+        <li><a href="../View/Sequence.php">Sequence</a></li>
         <li><a href="../View/Searching.php">Searching</a></li>
         <li><a href="../View/View.php">View</a></li>
-        <li><a href="../View/Procedure.php">Procedural Function</a></li>
+        <li><a href="../View/Procedure.php">Procedural SQL</a></li>
         <li><a href="../View/Trigger.php">Trigger</a></li>
         <li><a href="../Controller/SignOut.php">SignOut</a></li>
     </ul>

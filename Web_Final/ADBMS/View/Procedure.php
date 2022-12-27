@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/PlSql.css">
+    <link rel="stylesheet" href="../CSS/Procedure.css">
 
     <title>PLSQL</title>
 </head>
@@ -62,20 +62,33 @@ include '../View/Header.php';
 <div class="info">
    
 <form action="" method="POST" name="form3">
-    <label for="bid">Borrower ID: </label>
-    <input type="text" id="bid" name="bid" required> <br>
+    <table>
+        <tr>
+            <td><label for="bid">Borrower ID: </label></td>
+            <td><input type="text" id="bid" name="bid" required> </td>
+        </tr>
+        
+        <tr>
+            <td><label for="pname">Product Name: </label>  </td>
+            <td><input type="text" id="pname" name="pname" required>  </td>
+        </tr>
+        <tr>
+            <td><label for="cid">Category ID </label> </td>
+            <td><input type="text" id="cid" name="cid" required> <br> </td>
+        </tr>
+        <tr>
+            <td><label for="budg">Budget: </label> </td>
+            <td><input type="number" id="budg" name="budg" required> </td>
+        </tr>
+        <tr></tr>
+
+        <tr>
+            <td colspan="2"><label for="budg"> <input class="submit" type="submit" id="submit3" name="submit3" value="Submit"></label> </td>
+        </tr>
+
+    </table>
     
-    <label for="pname">Product Name: </label>
-    <input type="text" id="pname" name="pname" required> <br>
    
-    <label for="cid">Category ID </label>
-    <input type="text" id="cid" name="cid" required> <br>
-    
-    <label for="budg">Budget: </label>
-    <input type="number" id="budg" name="budg" required>
-    
-    <br><br>
-    <input class="submit" type="submit" id="submit3" name="submit3" value="Submit">
 </form>
 
 </div>

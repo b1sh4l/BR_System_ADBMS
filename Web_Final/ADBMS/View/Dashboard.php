@@ -6,7 +6,9 @@ include ("../Controller/SignInCheck.php");
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <style>body {background-color: #263238;} </style>
+    <style>body {background-color: #263238;} 
+     h2 {color: white; align-items: center;}
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/Header.css">
     <title></title>
@@ -15,5 +17,6 @@ include ("../Controller/SignInCheck.php");
 <?php
 include '../View/Header.php';
 ?>
+<h2>WELCOME</h2>
 </body>
 </html>
