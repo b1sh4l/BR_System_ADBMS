@@ -8,16 +8,41 @@
     <title>Searching</title>
 </head>
 <body>
+    
 <?php
 
 include '../View/Header.php';
 include '../Model/SearchingModel.php';
+
+//include '../Controller/SearchingCheck.php';
 ?>
 <div class="title">
     <h1>Searching Operation from oracle</h1>
 </div>
+
+<div class='search'>
+
+    	<table align="center" id="searchTable">
+        <form action="../Controller/SearchingCheck.php" method="post">
+            <tr>
+                  <td> <label for="bid">Borrower ID:</label></td>
+                  <td> <input id="bid" type="text" name="bid" required> <?php $bid_error ?></td>
+                  <td>  <input class="submit" type="submit" name="btnbid" value="SEARCH"></td>
+            </tr>
+        </form>
+        <form action="../Controller/SearchingCheck.php" method="post">
+            <tr>
+            <td> <label for="oid">Owner ID:</label></td>
+                  <td> <input id="oid" type="text" name="oid" required> <?php $oid_error ?></td>
+                  <td> <input class="submit" type="submit" name="btnoid" value="SEARCH"></td>
+              </tr>
+            </form>
+        </table>
+</div>
+
+
 <div class="heading-table">
-    <p>Find all admins who are listed in the employee table with the employee id</p>
+    <p>01. Find all admins who are listed in the employee table with the employee id</p>
 </div>
 <table border="2" style="width:100%">
     <tr>
@@ -49,7 +74,7 @@ include '../Model/SearchingModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Find the employee who joined after 2020</p>
+    <p>02. Find the employee who joined after 2020</p>
 </div>
 <table border="2" style="width:100%">
     <tr>
@@ -76,7 +101,7 @@ include '../Model/SearchingModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Find the requested and rented products which have same budget</p>
+    <p>03. Find the requested and rented products which have same budget</p>
 </div>
 <table border="2"  style="width:100%" >
     <tr>
@@ -103,7 +128,7 @@ include '../Model/SearchingModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Find out the borrowers who paid with BKASH</p>
+    <p>04. Find out the borrowers who paid with BKASH</p>
 </div>
 <table border="2"  style="width:100%" >
     <tr>
@@ -131,7 +156,7 @@ include '../Model/SearchingModel.php';
 </table>
 
 <div class="heading-table">
-    <p>Find the product category that are requested most</p>
+    <p>05. Find the product category that are requested most</p>
 </div>
 <table border="2" style="width:100%">
     <tr>
@@ -152,7 +177,7 @@ include '../Model/SearchingModel.php';
 </table>
 
 <div class="heading-table" style="width:100%">
-    <p>Find the details of product of second highest budget</p>
+    <p>06. Find the details of product of second highest budget</p>
 </div>
 <table border="2" style="width:100%">
     <tr>
@@ -175,6 +200,7 @@ include '../Model/SearchingModel.php';
         echo '</tr>';
         }
     ?>
+
 </table>
 </body>
 </html>

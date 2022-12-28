@@ -1,5 +1,19 @@
 <?php
 include '../Model/DBConn.php';
+
+function borrowerSearch($bid){
+    $conn = connection();
+    $sql = oci_parse($conn,"select * from BORROWER where B_ID='$bid' OR B_ID like '%$bid%'") ;
+    $res = oci_execute($sql);
+    return $sql;
+}
+function ownerSearch($oid){
+    $conn = connection();
+    $sql = oci_parse($conn,"select * from OWNER where O_ID='$oid' OR O_ID like '%$oid%'") ;
+    $res = oci_execute($sql);
+    return $sql;
+}
+
 function problem1(){
     $conn = connection();
     $sql = oci_parse($conn,"select employee.emp_id, employee.job, admin.a_id, admin.a_fname, admin.a_lname, admin.A_JOINNING_DATE, admin.A_AGE, admin.A_GENDER, admin.A_MBL, admin.A_EMAIL from employee, admin where a_id=employee.AD_OR_CS_ID

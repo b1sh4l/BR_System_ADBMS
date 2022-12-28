@@ -17,7 +17,7 @@ include "../Controller/ProcedureCheck.php";
 include '../View/Header.php';
 ?>
 <div class="title">
-    <h1>Procedures and function</h1>
+    <h1>Procedures and Function</h1>
 </div>
 
 <!-- 1st -->
